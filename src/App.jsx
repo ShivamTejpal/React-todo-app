@@ -1,11 +1,22 @@
-import TodoInput from "./components/Todoinput"
-import TodoList from "./components/Todolist"
+import React, { useState } from "react";
+import TodoInput from "./components/Todoinput";
+import TodoList from "./components/Todolist";
 
-function App(){
+function App() {
+  const [todos, setTodos] = useState([
+  ]);
+
+  function handleAddTodos(newTodo) {
+    const newTodoList = [...todos, newTodo];
+    setTodos(newTodoList);
+  }
+
   return (
-  <>
-    <TodoInput/>
-    <TodoList/>
-  </>)
+    <>
+      <TodoInput handleAddTodos={handleAddTodos} />
+      <TodoList todos={todos} />
+    </>
+  );
 }
-export default App
+
+export default App;
