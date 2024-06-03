@@ -1,8 +1,11 @@
-import "./style.css"
+import TodoInput from "./components/Todoinput"
+import TodoList from "./components/Todolist"
 
 function App(){
   return (
   <>
-  <div>{4*4}</div>
+    <TodoInput/>
+    <TodoList/>
   </>)
 }
+export default App
